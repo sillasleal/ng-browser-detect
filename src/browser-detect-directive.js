@@ -1,6 +1,6 @@
 angular.module("browserDetect").directive("browserDetect", [
     "browserDetect.factory.getBrowser",
-    function (factory) {
+    function (getBrowser) {
 
         /**
          * Função a ser executada como link da diretiva
@@ -8,7 +8,7 @@ angular.module("browserDetect").directive("browserDetect", [
          * @param {object} element O elemento afetado pela diretiva
          */
         function link(scope, element) {
-            var browser = factory.getBrowser();
+            var browser = getBrowser.info();
             var className = browser.name.toLowerCase();
             var classVersionName = className + "-" + parseInt(browser.version);
             angular.element(element).addClass(className);

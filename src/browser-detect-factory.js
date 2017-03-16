@@ -13,12 +13,12 @@ angular.module("browserDetect").factory("browserDetect.factory.getBrowser", [
                     ];
             var chromiuns = [
                 {
-                    expression: /\bOPR\/(\d+)/,
-                    name: "Opera"
-                },
-                {
                     expression: /\bChromium\/(\d+)/,
                     name: "Chromium"
+                },
+                {
+                    expression: /\bOPR\/(\d+)/,
+                    name: "Opera"
                 },
                 {
                     expression: /\bEdge\/(\d+)/,
@@ -69,7 +69,7 @@ angular.module("browserDetect").factory("browserDetect.factory.getBrowser", [
 
         /**/
         return {
-            getBrowser: getBrowser
+            info: getBrowser
         };
     }
 ]);
