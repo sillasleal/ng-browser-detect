@@ -1,6 +1,15 @@
 {
     "name": "BrowserDetect",
     "version": "1.0.0",
+    "authors": [
+        "Sillas S. Leal <sillas.s.leal@gmail.com>"
+    ],
+    "license": "GPL-3.0",
+    "homepage": "https://github.com/sillasleal/ng-browser-detect",
+    "keywords": [
+        "browser",
+        "class"
+    ],
     "main": [
         "src/browser-detect.js",
         "src/browser-detect-factory.js",
@@ -9,7 +18,6 @@
     "ignore": [
         ".jshintrc", "**/*.txt"
     ],
-    "license": "GPL-3",
     "dependencies": {
         "angular": "^1.5"
     },
