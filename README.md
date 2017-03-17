@@ -17,6 +17,10 @@ bower install ng-browser-detect --save
 
 Para adicionar classes referentes ao navegador em execução
 
+```javascript
+angular.module("myApp", ["browserDetect"]);
+```
+
 ```html
 <div browser-detect-class></div>
 ```
