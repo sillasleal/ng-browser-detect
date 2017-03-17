@@ -17,7 +17,7 @@ bower install ng-browser-detect --save
 
 Para adicionar classes referentes ao navegador em execução.
 
-###1. Adicione o javascript ao seu index:
+### 1. Adicione o javascript ao seu index:
 
 ```html
 <script src="bower_components/ng-browser-detect/dest/browser-detect.min.js"></script>
@@ -29,25 +29,25 @@ ou
 <script src="https://raw.githubusercontent.com/sillasleal/ng-browser-detect/master/dest/browser-detect.min.js"></script>
 ```
 
-###2. Adicione o módulo "browserDetect" ao seu projeto
+### 2. Adicione o módulo "browserDetect" ao seu projeto
 
 ```javascript
 angular.module("myApp", ["browserDetect"]);
 ```
 
-###3. Insira a directiva onde deseja que as classe do browser devem ser inseridas.
+### 3. Insira a directiva onde deseja que as classe do browser devem ser inseridas.
 
 ```html
 <div browser-detect-class></div>
 ```
 
-####Resulta em 
+#### Resulta em 
 
 ```html
 <div class="browser-name browser-version browser-name-verion"></div>
 ```
 
-####Por exemplo, no Chrome, na versão 56 do browser:
+#### Por exemplo, no Chrome, na versão 56 do browser:
 
 ```html
 <div class="chrome 56 chrome-56"></div>
