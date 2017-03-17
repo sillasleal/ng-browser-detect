@@ -1,0 +1,25 @@
+{
+  "name": "ng-browser-detect",
+  "version": "1.0.0",
+  "description": "Pequeno módulo que adiciona classes referentes ao browser em execução ao elemento selecionado",
+  "main": "gulpfile.js",
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://sillasleal@github.com/sillasleal/ng-browser-detect.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sillasleal/ng-browser-detect/issues"
+  },
+  "homepage": "https://github.com/sillasleal/ng-browser-detect#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-strip-comments": "^2.4.5",
+    "gulp-uglify": "^2.1.0"
+  }
+}

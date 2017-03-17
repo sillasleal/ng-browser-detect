@@ -1,4 +1,4 @@
-angular.module("browserDetect").directive("browserDetect", [
+angular.module("browserDetect").directive("browserDetectClass", [
     "browserDetect.factory.getBrowser",
     function (getBrowser) {
 
@@ -11,7 +11,9 @@ angular.module("browserDetect").directive("browserDetect", [
             var browser = getBrowser.info();
             var className = browser.name.toLowerCase();
             var classVersionName = className + "-" + parseInt(browser.version);
+            /**/
             angular.element(element).addClass(className);
+            angular.element(element).addClass(browser.version);
             angular.element(element).addClass(classVersionName);
         }
 

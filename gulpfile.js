@@ -5,7 +5,22 @@
  */
 
 var gulp = require('gulp');
+var concat = require('gulp-concat');
+var stripComments = require("gulp-strip-comments");
+var uglify = require("gulp-uglify");
+var js = [
+    "./src/browser-detect.js",
+    "./src/browser-detect-factory.js",
+    "./src/browser-detect-directive-class.js"
+];
 
-gulp.task('default', function () {
-    // place code for your default task here
+gulp.task('build', function () {
+    return gulp
+            .src(js)
+            .pipe(stripComments())
+            .pipe(uglify())
+            .pipe(concat("browser-detect.min.js", {
+                newLine: ""
+            }))
+            .pipe(gulp.dest("./dest"));
 });
