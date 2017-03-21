@@ -81,6 +81,7 @@ nameVersion | Adiciona a classe referente ao nome concatenado ao browser
 vendor      | Adiciona a classe referente ao desenvolvedor do browser
 product     | Adiciona a classe referente ao product name
 platform    | Adiciona a classe referente ao sistema operacional
+device      | Adiciona a classe referente ao tipo do dispositivo(desktop e mobile)
 
 ### Exemplo de classes:
 #### Google Chrome Sendo executado no Windows 10
@@ -93,3 +94,4 @@ Google Chrome    56    | nameVersion   | chrome-56
 Google Inc.            | vendor        | google-inc
 Gecko                  | product       | gecko
 Win32                  | platform      | win32
+Device                 | device        | desktop

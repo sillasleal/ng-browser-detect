@@ -1,6 +1,6 @@
 {
-    "name": "BrowserDetect",
-    "version": "1.0.3",
+    "name": "ng-browser-detect",
+    "version": "1.0.4",
     "authors": [
         "Sillas S. Leal <sillas.s.leal@gmail.com>"
     ],

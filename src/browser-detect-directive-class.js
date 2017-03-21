@@ -8,7 +8,8 @@ angular.module("browserDetect").directive("browserDetectClass", [
          * @returns {string} O texto devidamente convertido para nome de classe
          */
         function ajustar(prop) {
-            if (prop.substring(prop.length - 1) === ".") {
+            var finais = [".", ",", "-", " "];
+            if (finais.indexOf(prop.substring(prop.length - 1)) > -1) {
                 prop = prop.substring(0, prop.length - 1);
             }
             return prop
@@ -32,7 +33,8 @@ angular.module("browserDetect").directive("browserDetectClass", [
                 nameVersion: classVersionName,
                 vendor: ajustar(browser.vendor),
                 product: ajustar(browser.product),
-                platform: ajustar(browser.platform)
+                platform: ajustar(browser.platform),
+                device: ajustar(browser.device)
             };
             var classAdd = angular.copy(classes);
             /**/

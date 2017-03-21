@@ -1,16 +1,20 @@
 angular.module("browserDetect").factory("browserDetect.factory.getBrowser", [
-    function () {
+    "$rootScope",
+    function ($root) {
 
         /**
          * Função que retorna de forma dinâmica o browser em execução
          * @returns {browser-detect-factoryL#2.getBrowser.browser-detect-factoryAnonym$2|browser-detect-factoryL#2.getBrowser.browser-detect-factoryAnonym$1|browser-detect-factoryL#2.getBrowser.browser-detect-factoryAnonym$3}
          */
         function getBrowser() {
+            var testB = /(opera|edge|chromium|chrome|safari|firefox|msie|trident(?=\/))\/?\s*(\d+)/i;
+            var testD = /android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i;
             var ua = navigator.userAgent;
+            var uaLow = ua.toLowerCase();
+            /*var soArray = ua.substring(ua.indexOf("(") + 1, ua.indexOf(")"))
+             .split("; ");*/
             var test;
-            var M = ua.match(/(opera|edge|chromium|chrome|safari|firefox|msie|trident(?=\/))\/?\s*(\d+)/i) ||
-                    [
-                    ];
+            var M = ua.match(testB) || [];
             var chromiuns = [
                 {
                     expression: /\bChromium\/(\d+)/,
@@ -28,14 +32,14 @@ angular.module("browserDetect").factory("browserDetect.factory.getBrowser", [
             var browser = {
                 name: "",
                 version: 0,
-                vendor: navigator.vendor || "Undefined",
-                product: navigator.product || "Undefined",
-                platform: navigator.platform || "Undefined"
+                vendor: navigator.vendor || "Vendor Undefined",
+                product: navigator.product || "Product Undefined",
+                platform: navigator.platform || "Platform Undefined",
+                device: (testD.test(uaLow)) ? "mobile" : "desktop"
             };
             /**/
             if (/trident/i.test(M[1])) {
-                test = /\brv[ :]+(\d+)/g.exec(ua) || [
-                ];
+                test = /\brv[ :]+(\d+)/g.exec(ua) || [];
                 browser.name = "IE";
                 browser.version = (test[1] || '');
             }
@@ -72,7 +76,13 @@ angular.module("browserDetect").factory("browserDetect.factory.getBrowser", [
 
         /**/
         return {
-            info: getBrowser
+            info: function () {
+                if (typeof ($root.browserDetectFactoryBrowserInfo) !== "object") {
+                    $root.browserDetectFactoryBrowserInfo = getBrowser();
+                }
+                /**/
+                return $root.browserDetectFactoryBrowserInfo;
+            }
         };
     }
 ]);
