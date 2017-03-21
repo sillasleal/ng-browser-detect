@@ -27,7 +27,10 @@ angular.module("browserDetect").factory("browserDetect.factory.getBrowser", [
             ];
             var browser = {
                 name: "",
-                version: 0
+                version: 0,
+                vendor: navigator.vendor || "Undefined",
+                product: navigator.product || "Undefined",
+                platform: navigator.platform || "Undefined"
             };
             /**/
             if (/trident/i.test(M[1])) {

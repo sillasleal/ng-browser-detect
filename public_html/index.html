@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="bower_components/angular/angular.min.js" type="text/javascript"></script>
+        <script src="dest/browser-detect.js" type="text/javascript"></script>
+        <script src="dest/browser-detect-factory.js" type="text/javascript"></script>
+        <script src="dest/browser-detect-directive-class.js" type="text/javascript"></script>
+    </head>
+    <body ng-app="browserDetect">
+        <div browser-detect-class="name">Name(direct)</div>
+        <div browser-detect-class="{{'name'}}">Name</div>
+        <div browser-detect-class="{{'version'}}">Version</div>
+        <div browser-detect-class="{{['name','version']}}">Name and Version</div>
+        <div browser-detect-class="{{'nameVersion'}}">Name-Version</div>
+        <div browser-detect-class>All</div>
+    </body>
+</html>
