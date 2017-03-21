@@ -56,14 +56,8 @@ angular.module("browserDetect").factory("browserDetect.factory.getBrowser", [
                 }
             }
             if (browser.name.length === 0) {
-                M = M[2] ? [
-                    M[1],
-                    M[2]
-                ] : [
-                    navigator.appName,
-                    navigator.appVersion,
-                    '-?'
-                ];
+                M = M[2] ? [M[1], M[2]] :
+                        [navigator.appName, navigator.appVersion, '-?'];
                 if ((test = ua.match(/version\/(\d+)/i)) !== null) {
                     M.splice(1, 1, test[1]);
                 }
@@ -77,7 +71,8 @@ angular.module("browserDetect").factory("browserDetect.factory.getBrowser", [
         /**/
         return {
             info: function () {
-                if (typeof ($root.browserDetectFactoryBrowserInfo) !== "object") {
+                if (typeof ($root.browserDetectFactoryBrowserInfo) !==
+                        "object") {
                     $root.browserDetectFactoryBrowserInfo = getBrowser();
                 }
                 /**/

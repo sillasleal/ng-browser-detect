@@ -4,10 +4,12 @@
     "authors": [
         "Sillas S. Leal <sillas.s.leal@gmail.com>"
     ],
+    "description": "Pequeno módulo que adiciona classes referentes ao browser em execução ao elemento selecionado",
     "license": "GPL-3.0",
     "homepage": "https://github.com/sillasleal/ng-browser-detect",
     "keywords": [
         "browser",
+        "browser detect",
         "class"
     ],
     "main": [
