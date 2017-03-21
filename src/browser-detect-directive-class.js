@@ -22,6 +22,7 @@ angular.module("browserDetect").directive("browserDetectClass", [
          * Função a ser executada como link da diretiva
          * @param {object} scope O escopo de execução da diretiva 
          * @param {object} element O elemento afetado pela diretiva
+         * @param {object} attrs Objeto contendo os parametros passados para a diretiva
          */
         function link(scope, element, attrs) {
             var browser = getBrowser.info();
@@ -39,7 +40,7 @@ angular.module("browserDetect").directive("browserDetectClass", [
             var classAdd = angular.copy(classes);
             /**/
             if (attrs.browserDetectClass) {
-                /* Caso a inclusão de classes seja filtrada */
+                /* Caso a inclusão de classes a ser exibida */
                 var especifc = scope.$eval(attrs.browserDetectClass);
                 if (especifc && Array.isArray(especifc)) {
                     classAdd = {};
