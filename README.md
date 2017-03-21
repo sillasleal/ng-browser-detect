@@ -52,3 +52,44 @@ angular.module("myApp", ["browserDetect"]);
 ```html
 <div class="chrome 56 chrome-56"></div>
 ```
+
+### Para adicionar as classes relacionadas a apenas algumas opções:
+
+```html
+<div browser-detect-class="name"></div>
+```
+
+#### ou
+
+```html
+<div browser-detect-class="{{'name'}}"></div>
+```
+
+#### ou
+
+```html
+<div browser-detect-class="{{['name', 'version']}}"></div>
+```
+
+### As opções dinsponíveis são:
+
+Opção       | Definição
+------------|-------------------------------------------------------------
+name        | Adiciona a classe referente ao nome do browser
+version     | Adiciona a classe referente a versão do browser
+nameVersion | Adiciona a classe referente ao nome concatenado ao browser
+vendor      | Adiciona a classe referente ao desenvolvedor do browser
+product     | Adiciona a classe referente ao product name
+platform    | Adiciona a classe referente ao sistema operacional
+
+### Exemplo de classes:
+#### Google Chrome Sendo executado no Windows 10
+
+Valor no sistema       | Opção         | Classe
+-----------------------|:-------------:|:----------:
+Google Chrome          | name          | chrome
+Versão 56.0.2924.87    | version       | 56
+Google Chrome    56    | nameVersion   | chrome-56
+Google Inc.            | vendor        | google-inc
+Gecko                  | product       | gecko
+Win32                  | platform      | win32
