@@ -3,3 +3,4 @@
 /node_modules/
 /npm-debug.*
 /public_html/dest/
+/public_html/bower_components/
