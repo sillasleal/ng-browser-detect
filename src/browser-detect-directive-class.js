@@ -9,13 +9,14 @@ angular.module("browserDetect").directive("browserDetectClass", [
          */
         function ajustar(prop) {
             var finais = [".", ",", "-", " "];
+            var ret;
             if (finais.indexOf(prop.substring(prop.length - 1)) > -1) {
-                prop = prop.substring(0, prop.length - 1);
+                ret = prop.substring(0, prop.length - 1);
+            }else{
+                ret = prop;
             }
-            return prop
-                    .replace(".", "-")
-                    .replace(" ", "-")
-                    .toLowerCase();
+            
+            return ret.replace(".", "-").replace(" ", "-").toLowerCase();
         }
 
         /**
@@ -40,7 +41,7 @@ angular.module("browserDetect").directive("browserDetectClass", [
             var classAdd = angular.copy(classes);
             /**/
             if (attrs.browserDetectClass) {
-                /* Caso a inclusão de classes a ser exibida */
+                /* Caso seja definido paar incluir classes especificas */
                 var especifc = scope.$eval(attrs.browserDetectClass);
                 if (especifc && Array.isArray(especifc)) {
                     classAdd = {};
