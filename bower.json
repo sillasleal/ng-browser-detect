@@ -18,7 +18,7 @@
         "src/browser-detect-directive-class.js"
     ],
     "ignore": [
-        ".jshintrc", "**/*.txt"
+        "public_html"
     ],
     "dependencies": {
         "angular": "^1.5"
