@@ -23,6 +23,5 @@
     "dependencies": {
         "angular": "^1.5"
     },
-    "devDependencies": {
-    }
+    "devDependencies": {}
 }
